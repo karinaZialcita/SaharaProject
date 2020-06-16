@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entities\account.cs" />
-    <Compile Include="entities\items.cs" />
+    <Compile Include="entities\item.cs" />
     <Compile Include="orderItem.aspx.cs">
       <DependentUpon>orderItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
