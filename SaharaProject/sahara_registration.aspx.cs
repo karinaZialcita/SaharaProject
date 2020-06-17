@@ -31,8 +31,10 @@ namespace sahara
             }
             else
             {
-                lblName.ForeColor = System.Drawing.Color.Red;
-                lblName.Text = "Please check your input";
+                //lblName.ForeColor = System.Drawing.Color.Red;
+                lblEmailAdr.ForeColor = System.Drawing.Color.Red;
+                //lblName.Text = "Please check your input";
+                lblEmailAdr.Text = "Please check you email input";
             }
         }
         protected void clickLogin(object sender,EventArgs e)

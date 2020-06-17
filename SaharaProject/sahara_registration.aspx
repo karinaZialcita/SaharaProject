@@ -31,8 +31,7 @@
         <div class="row">
         <div id="registration">
             <h2>Register</h2>
-            <asp:Label ID="lblName" runat="server"></asp:Label>
-            <asp:Label ID="Name" runat="server" Text="Name:"></asp:Label>
+            <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label>
             <br />
             <asp:TextBox ID="txtName" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
             <p /> 
@@ -42,7 +41,7 @@
             <p />
             <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
             <br />
-            <asp:TextBox ID="txtPassword" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" BorderColor="#000000" Width="318px" Height="30px" TextMode="Password"></asp:TextBox>
             <p />
             <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:"></asp:Label>
             <br />
@@ -58,16 +57,17 @@
             <h2>Login</h2>
             <asp:Label ID="popuplabel" runat="server" Text="Name:"></asp:Label>
             <br />
+            <asp:TextBox ID="nameBox" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
+            <p />
             <asp:Label ID="lblLoginEmail" runat="server" Text="Email Address:"></asp:Label>
             <br />
             <asp:TextBox ID="txtLoginEmail" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
             <p />
-            <asp:Label ID="lblLoginPass" runat="server" Text="Password:"></asp:Label>
+            <asp:Label ID="lblLoginPass" runat="server" Text="Password:" ></asp:Label>
             <br />
-            <asp:TextBox ID="txtLoginPass" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
+            <asp:TextBox ID="txtLoginPass" runat="server" BorderColor="#000000" Width="318px" Height="30px" TextMode="Password"></asp:TextBox>
             <p />
             <asp:Button ID="loginButton" runat="server" Text="Login" Height="30px" Width="97px" OnClick="clickLogin"/>
-
         </div>
 
 

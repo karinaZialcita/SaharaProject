@@ -33,15 +33,6 @@ namespace sahara
         protected global::System.Web.UI.WebControls.Label lblName;
 
         /// <summary>
-        /// Name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Name;
-
-        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -139,6 +130,15 @@ namespace sahara
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label popuplabel;
+
+        /// <summary>
+        /// nameBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameBox;
 
         /// <summary>
         /// lblLoginEmail control.
