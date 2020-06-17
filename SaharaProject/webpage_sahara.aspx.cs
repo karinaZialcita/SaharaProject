@@ -15,15 +15,16 @@ namespace sahara
     {
         Item item = new Item();
         List<Item> itemList = new List<Item>();
-
+        bool isCatalogVisible;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string cookiename = Request.Cookies["accountName"].Value;
-            welcomeName.InnerText = "Welcome, " + cookiename;
-            wrapper.Style.Add("display", "none");
-            wrapper.Visible = false;
+            /*            string cookiename = Request.Cookies["accountName"].Value;
+            */            /*welcomeName.InnerText = "Welcome, " + cookiename;*/
+
             preloadItems();
+            fillCatalog();
             
+            isCatalogVisible = false;
         }
         protected void preloadItems()
         {
@@ -69,6 +70,12 @@ namespace sahara
         }
         protected void onClickSearch(object sender, EventArgs e)
         {
+            if(isCatalogVisible)
+            {
+                wrapper.Style.Remove("display");
+                isCatalogVisible = false;
+            }
+
             string itemSearch = searchItem.Text.ToLower().Trim();
             foreach (Item item in itemList)
             {
@@ -86,9 +93,12 @@ namespace sahara
                         Label label = new Label();
                         label.Style.Add("padding", "20px");
                         label.Text = item.itemName + " $" + item.price;
+                        Button button = new Button();
+                        button.Text = "Add to Cart";
+                        button.Click += clickItem;
                         PlaceHolder1.Controls.Add(image);
                         PlaceHolder1.Controls.Add(label);
-
+                        PlaceHolder1.Controls.Add(button);
                     }
                     /*else searchResult.InnerText = "sorry we dont have that";*/
                 }
@@ -96,24 +106,20 @@ namespace sahara
         }
         protected void toggleCatalog(object sender, EventArgs e)
         {
-            searchResult.Style.Add("display", "none");
-            searchResult2.Style.Add("display", "none");
-            if (wrapper.Visible == false)
-            {
-                wrapper.Style.Remove("display");
 
-                wrapper.Visible = true;
-                fillCatalog();
+            if (!isCatalogVisible)
+            {
+                wrapper.Style.Add("display","block");
+                isCatalogVisible = true;
             }
             else
             {
-                wrapper.Style.Add("display", "none");
-                wrapper.Visible = false;
+                wrapper.Style.Remove("display");
+                isCatalogVisible = false;
             }
         }
         protected void fillCatalog()
         {
-            wrapper.Visible = true;
             foreach (Item item in itemList)
             {
                 foreach (string word in item.keyWords)
@@ -128,15 +134,15 @@ namespace sahara
                         image.Style.Add("border-radius", "25px");
                         image.Style.Add("padding", "5px");
                         Label label = new Label(); 
-                        label.Style.Add("padding", "20px");
+                        label.Style.Add("padding", "5px");
                         //label.Style.Add("margin", "20px");
                         label.Text = item.itemName + " $" + item.price;
+                        Button button = new Button();
+                        button.Text = "Add to Cart";
+                        button.Click += clickItem;
                         PlaceHolderRugs.Controls.Add(image);
                         PlaceHolderRugs.Controls.Add(label);
-                        // on click
-                        Button button = new Button();
-                        button.Click += clickItem;
-                        //ImageButton.DisabledCssClass.
+                        PlaceHolderRugs.Controls.Add(button);
                     }
                     if ("mat" == word)
                     {   //fills the menu with the items that contain the keyword
@@ -148,11 +154,15 @@ namespace sahara
                         image.Style.Add("border-radius", "25px");
                         image.Style.Add("padding", "5px");
                         Label label = new Label();
-                        label.Style.Add("padding", "20px");
+                        label.Style.Add("padding", "5px");
                         //label.Style.Add("margin", "20px");
                         label.Text = item.itemName + " $" + item.price;
+                        Button button = new Button();
+                        button.Text = "Add to Cart";
+                        button.Click += clickItem;
                         PlaceHolderMats.Controls.Add(image);
                         PlaceHolderMats.Controls.Add(label);
+                        PlaceHolderMats.Controls.Add(button);
                     }
                     if ("flooring" == word)
                     {   //fills the menu with the items that contain the keyword
@@ -164,11 +174,15 @@ namespace sahara
                         image.Style.Add("border-radius", "25px");
                         image.Style.Add("padding", "5px");
                         Label label = new Label();
-                        label.Style.Add("padding", "12px");
+                        label.Style.Add("padding", "5px");
                         //label.Style.Add("margin", "20px");
                         label.Text = item.itemName + " $" + item.price;
+                        Button button = new Button();
+                        button.Text = "Add to Cart";
+                        button.Click += clickItem;
                         PlaceHolderFloorings.Controls.Add(image);
                         PlaceHolderFloorings.Controls.Add(label);
+                        PlaceHolderFloorings.Controls.Add(button);
 
                     }
                     /*else searchResult.InnerText = "sorry we dont have that";*/
@@ -176,13 +190,13 @@ namespace sahara
             }
         }
 
-        protected void clickItem (object sender, EventArgs e)
+        void clickItem(object sender, EventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            string imagePth = button.ImageUrl;
-            Response.Cookies["itemName"].Value = button.AlternateText;
-            Response.Cookies["imagePath"].Value = imagePth;
+            
+            Button button = (Button)sender;
+   
             Response.Redirect("orderItem.aspx");
+
         }
 
     }

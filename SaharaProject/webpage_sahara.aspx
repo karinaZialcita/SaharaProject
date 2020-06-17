@@ -76,16 +76,20 @@
         <h1>Sahara</h1>
         <div id="searchWallpaper">
             <p id="welcomeName" runat="server"></p>
+
             <asp:TextBox ID="searchItem" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
             <asp:Button ID="searchButton" runat="server"  text="Search" OnClick="onClickSearch" />
 
                 <asp:Button ID="showCatalog" runat="server" style="text-align:center" text="Show Catalog" OnClick="toggleCatalog" />
+                    <asp:Label ID="cartLabel" Text="Cart: " runat="server"></asp:Label>
+                    <asp:Label ID="cartQuantity" Text="" runat="server"></asp:Label>
+                
+                    <asp:Button ID="goToCartBttn" runat="server" text ="Go To Cart" />
 
                 <div id="searchResult" runat="server">
                 </div>
             <br /> 
                 <div id="searchResult2" runat="server" style="display:none">
-                    
                     <asp:Label ID="searchName" runat="server"></asp:Label>
                 </div>
             <br />
@@ -97,7 +101,7 @@
             </div>
 
         
-        <div id="wrapper"  runat="server">
+        <div id="wrapper" style="display:none" runat="server">
 
             <div class="row">
             
@@ -105,8 +109,8 @@
             <p id="caption">Rugs</p>
                 <asp:PlaceHolder runat="server" ID="PlaceHolderRugs"/>
 
-                <%--onclick?--%>
-                <asp:ImageButton ID="Image1" runat="server" onClick="clickItem" ImageUrl="items/bedrockRug.jpg"/>
+                <%--onclick?
+                <asp:ImageButton ID="Image1" runat="server" onClick="clickItem" ImageUrl="items/bedrockRug.jpg"/>--%>
 
             </div>
             <div class="column">
