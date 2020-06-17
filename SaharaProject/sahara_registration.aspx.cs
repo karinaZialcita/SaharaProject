@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace sahara
 {
     public partial class sahara_registration : System.Web.UI.Page
@@ -18,7 +19,7 @@ namespace sahara
         {
             Account newAccount = new Account();
             int num = 0;
-            if (!int.TryParse(txtName.Text.Trim(), out num) && 
+            if (!int.TryParse(txtName.Text.Trim(), out num) &&
                 txtEmailAdr.Text.Contains('@') && txtEmailAdr.Text.Contains(".com") &&
                 txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
@@ -31,10 +32,14 @@ namespace sahara
             }
             else
             {
-                //lblName.ForeColor = System.Drawing.Color.Red;
+                lblName.ForeColor = System.Drawing.Color.Red;
+                lblName.Text = "Please input your name";
+
                 lblEmailAdr.ForeColor = System.Drawing.Color.Red;
-                //lblName.Text = "Please check your input";
                 lblEmailAdr.Text = "Please check you email input";
+
+                lblConfirmPassword.ForeColor = System.Drawing.Color.Red;
+                lblConfirmPassword.Text = "Password does not match";
             }
         }
         protected void clickLogin(object sender,EventArgs e)

@@ -133,7 +133,10 @@ namespace sahara
                         label.Text = item.itemName + " $" + item.price;
                         PlaceHolderRugs.Controls.Add(image);
                         PlaceHolderRugs.Controls.Add(label);
-
+                        // on click
+                        Button button = new Button();
+                        button.Click += clickItem;
+                        //ImageButton.DisabledCssClass.
                     }
                     if ("mat" == word)
                     {   //fills the menu with the items that contain the keyword
@@ -172,13 +175,13 @@ namespace sahara
                 }
             }
         }
+
         protected void clickItem (object sender, EventArgs e)
         {
-
-           /* ImageButton button = (ImageButton)sender;
-            string imagePth = button.ImageUrl;*/
-/*            Response.Cookies["itemName"].Value = button.AlternateText;
-            Response.Cookies["imagePath"].Value = imagePth;*/
+            ImageButton button = (ImageButton)sender;
+            string imagePth = button.ImageUrl;
+            Response.Cookies["itemName"].Value = button.AlternateText;
+            Response.Cookies["imagePath"].Value = imagePth;
             Response.Redirect("orderItem.aspx");
         }
 

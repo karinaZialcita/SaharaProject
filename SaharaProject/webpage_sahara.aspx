@@ -7,27 +7,25 @@
     <title>Sahara Rugs And Mats</title>
     <style>
         body{
-            font-family: 'Segoe Script';
-            color: sandybrown;
+            font-family: Georgia;
+            color: saddlebrown;
             text-align:center;
-
         }
           * {
-        box-sizing: border-box;
-        align-content:center;
+            box-sizing: border-box;
+            align-content:center;
+            background-color: burlywood;
         }
         .column {
-        float: left;
-        width: 20.333%;
-        padding: 0px;
+            float: left;
+            width: 20.333%;
+            padding: 0px;
         }
         .row::after {
-        content: "";
-        clear: both;
-        display: table;
+            content: "";
+            clear: both;
+            display: table;
         }
-
-
 
         #searchWallpaper {
             text-align:center;
@@ -35,20 +33,20 @@
 
         }
         .column {
-          float: left;
-          padding: 10px;
-          height: 300px;
-          width:300px;
+            float: left;
+            padding: 10px;
+            height: 300px;
+            width:300px;
         }
         .row:after {
-          content: "";
-          display: table;
-          clear: both;
+            content: "";
+            display: table;
+            clear: both;
         }
         #caption {
-        border: solid black 1px;
-        border-radius: 25px;
-        text-align: center;
+            border: solid black 1px;
+            border-radius: 25px;
+            text-align: center;
 
         }
         #wrapper {
@@ -60,9 +58,9 @@
             padding-top:5px;
         }
         #searchImage{
-          width:50%;
-          border-radius: 25px;
-          text-align:center;
+            width:50%;
+            border-radius: 25px;
+            text-align:center;
         }
         .searchColumn{
             width:50%;
@@ -105,12 +103,15 @@
             
             <div class="column">
             <p id="caption">Rugs</p>
-                <asp:PlaceHolder runat="server" ID="PlaceHolderRugs" />
+                <asp:PlaceHolder runat="server" ID="PlaceHolderRugs"/>
+
+                <%--onclick?--%>
+                <asp:ImageButton ID="Image1" runat="server" onClick="clickItem" ImageUrl="items/bedrockRug.jpg"/>
+
             </div>
             <div class="column">
             <p id="caption">Mats</p>
                 <asp:PlaceHolder runat="server" ID="PlaceHolderMats" />
-
             </div>
                 <div class="column">
                     <p id="caption">Floorings</p>
