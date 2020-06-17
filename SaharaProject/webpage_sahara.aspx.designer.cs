@@ -78,15 +78,6 @@ namespace sahara
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl searchResult2;
 
         /// <summary>
-        /// searchImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton searchImage;
-
-        /// <summary>
         /// searchName control.
         /// </summary>
         /// <remarks>
@@ -96,13 +87,13 @@ namespace sahara
         protected global::System.Web.UI.WebControls.Label searchName;
 
         /// <summary>
-        /// allItems control.
+        /// PlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl allItems;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
 
         /// <summary>
         /// wrapper control.
@@ -114,93 +105,30 @@ namespace sahara
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrapper;
 
         /// <summary>
-        /// bedrockRug control.
+        /// PlaceHolderRugs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton bedrockRug;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderRugs;
 
         /// <summary>
-        /// roseRug control.
+        /// PlaceHolderMats control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton roseRug;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderMats;
 
         /// <summary>
-        /// tropicalRug control.
+        /// PlaceHolderFloorings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton tropicalRug;
-
-        /// <summary>
-        /// lacyRug control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton lacyRug;
-
-        /// <summary>
-        /// fluffyRug control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton fluffyRug;
-
-        /// <summary>
-        /// brownMat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton brownMat;
-
-        /// <summary>
-        /// tatamiMat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton tatamiMat;
-
-        /// <summary>
-        /// redKilimMat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton redKilimMat;
-
-        /// <summary>
-        /// avocadoMat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton avocadoMat;
-
-        /// <summary>
-        /// ivoryMat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ivoryMat;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderFloorings;
     }
 }

@@ -23,8 +23,9 @@ namespace sahara
             wrapper.Style.Add("display", "none");
             wrapper.Visible = false;
             preloadItems();
+            
         }
-        private void preloadItems()
+        protected void preloadItems()
         {
             //added key words
 
@@ -58,9 +59,7 @@ namespace sahara
             itemList.Add(new Item("Birch Flooring", 423.22, "items/birchFlooring.jpg",
                 new List<string>() {"flooring", "birch", "birch flooring"}));            
             itemList.Add(new Item("Flag Stone Flooring", 423.22, "items/flagStoneFlooring.jpg",
-                new List<string>() {"flooring", "flag", "flag stone", "stone", "flag stone flooring"}));            
-            itemList.Add(new Item("Monochromatic Tile Flooring", 423.22, "items/monochromaticTileFlooring.jpg",
-                new List<string>() {"flooring", "mono", "monochromatic","monochrome", "monochromatic tile", "monochromatic tile flooring"}));            
+                new List<string>() {"flooring", "flag", "flag stone", "stone", "flag stone flooring"}));                       
             itemList.Add(new Item("Rosewood Flooring", 423.22, "items/rosewoodFlooring.jpg",
                 new List<string>() {"flooring", "rosewood", "rose", "rosewood flooring"}));        
             itemList.Add(new Item("Slate Flooring", 423.22, "items/slateFlooring.jpg",
@@ -76,18 +75,26 @@ namespace sahara
                 foreach(string word in item.keyWords)
                 {
                     if (itemSearch == word)
-                    {
-                        searchResult.InnerText = "Yes we have the item " + item.itemName + "\n its is sold for the price of " + item.price;
+                    {   //fills the menu with the items that contain the keyword
+                        Image image = new Image();
+                        image.ImageUrl = item.imagePath;
+                        image.AlternateText = item.itemName;
+                        image.Style.Add("width", "300px");
+                        image.Style.Add("height", "300px");
+                        image.Style.Add("border-radius", "25px");
+                        image.Style.Add("padding", "5px");
+                        Label label = new Label();
+                        label.Style.Add("padding", "20px");
+                        label.Text = item.itemName + " $" + item.price;
+                        PlaceHolder1.Controls.Add(image);
+                        PlaceHolder1.Controls.Add(label);
 
-                        searchResult2.Style.Remove("display");
-                        searchImage.ImageUrl = item.imagePath;
-                        searchName.Text = item.itemName + " $" + item.price;
                     }
                     /*else searchResult.InnerText = "sorry we dont have that";*/
                 }
             }
         }
-        protected void onClickCatalog(object sender, EventArgs e)
+        protected void toggleCatalog(object sender, EventArgs e)
         {
             searchResult.Style.Add("display", "none");
             searchResult2.Style.Add("display", "none");
@@ -96,31 +103,82 @@ namespace sahara
                 wrapper.Style.Remove("display");
 
                 wrapper.Visible = true;
-
+                fillCatalog();
             }
             else
             {
                 wrapper.Style.Add("display", "none");
                 wrapper.Visible = false;
             }
+        }
+        protected void fillCatalog()
+        {
+            wrapper.Visible = true;
+            foreach (Item item in itemList)
+            {
+                foreach (string word in item.keyWords)
+                {
+                    if ("rug" == word)
+                    {   //fills the menu with the items that contain the keyword
+                        Image image = new Image();
+                        image.ImageUrl = item.imagePath;
+                        image.AlternateText = item.itemName;
+                        image.Style.Add("width", "300px");
+                        image.Style.Add("height", "300px");
+                        image.Style.Add("border-radius", "25px");
+                        image.Style.Add("padding", "5px");
+                        Label label = new Label(); 
+                        label.Style.Add("padding", "20px");
+                        //label.Style.Add("margin", "20px");
+                        label.Text = item.itemName + " $" + item.price;
+                        PlaceHolderRugs.Controls.Add(image);
+                        PlaceHolderRugs.Controls.Add(label);
 
+                    }
+                    if ("mat" == word)
+                    {   //fills the menu with the items that contain the keyword
+                        Image image = new Image();
+                        image.ImageUrl = item.imagePath;
+                        image.AlternateText = item.itemName;
+                        image.Style.Add("width", "300px");
+                        image.Style.Add("height", "300px");
+                        image.Style.Add("border-radius", "25px");
+                        image.Style.Add("padding", "5px");
+                        Label label = new Label();
+                        label.Style.Add("padding", "20px");
+                        //label.Style.Add("margin", "20px");
+                        label.Text = item.itemName + " $" + item.price;
+                        PlaceHolderMats.Controls.Add(image);
+                        PlaceHolderMats.Controls.Add(label);
+                    }
+                    if ("flooring" == word)
+                    {   //fills the menu with the items that contain the keyword
+                        Image image = new Image();
+                        image.ImageUrl = item.imagePath;
+                        image.AlternateText = item.itemName;
+                        image.Style.Add("width", "300px");
+                        image.Style.Add("height", "300px");
+                        image.Style.Add("border-radius", "25px");
+                        image.Style.Add("padding", "5px");
+                        Label label = new Label();
+                        label.Style.Add("padding", "12px");
+                        //label.Style.Add("margin", "20px");
+                        label.Text = item.itemName + " $" + item.price;
+                        PlaceHolderFloorings.Controls.Add(image);
+                        PlaceHolderFloorings.Controls.Add(label);
 
+                    }
+                    /*else searchResult.InnerText = "sorry we dont have that";*/
+                }
+            }
         }
         protected void clickItem (object sender, EventArgs e)
         {
 
-            ImageButton button = (ImageButton)sender;
-            string imagePth = button.ImageUrl;
-            Response.Cookies["itemName"].Value = button.AlternateText;
-/*            foreach(Items item in itemList)
-            {
-                if(button.AlternateText == item.itemName)
-                {
-                    Response.Cookies["itemPrice"].Value = item.price.ToString();
-
-                }
-            }*/
-            Response.Cookies["imagePath"].Value = imagePth;
+           /* ImageButton button = (ImageButton)sender;
+            string imagePth = button.ImageUrl;*/
+/*            Response.Cookies["itemName"].Value = button.AlternateText;
+            Response.Cookies["imagePath"].Value = imagePth;*/
             Response.Redirect("orderItem.aspx");
         }
 

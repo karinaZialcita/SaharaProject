@@ -29,7 +29,6 @@
             <div id="options" runat="server">
                 <div id="item" runat="server">
                 </div>
-                <img id="itemImage" runat="server" />
                    <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
                 <div id="buttons" runat="server">
                     <asp:Button ID="buyButton" onClick="clickBuy" Text="Buy" runat="server"/>

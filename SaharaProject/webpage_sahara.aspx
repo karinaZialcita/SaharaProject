@@ -14,18 +14,11 @@
         }
           * {
         box-sizing: border-box;
+        align-content:center;
         }
-
-        .column img {
-        margin-top: 12px;
-        }
-        .column img {
-        margin-top: 12px;
-        }
-
         .column {
         float: left;
-        width: 33.333%;
+        width: 20.333%;
         padding: 0px;
         }
         .row::after {
@@ -45,10 +38,7 @@
           float: left;
           padding: 10px;
           height: 300px;
-        }
-        .itemPic{
-          width:100%;
-          border-radius: 25px;
+          width:300px;
         }
         .row:after {
           content: "";
@@ -63,8 +53,8 @@
         }
         #wrapper {
             width: 75%;
-
-            margin-left:25%;
+            float:left;
+            margin-left:15%;
             margin-right:25%;
 
             padding-top:5px;
@@ -74,6 +64,12 @@
           border-radius: 25px;
           text-align:center;
         }
+        .searchColumn{
+            width:50%;
+            margin-left:25%;
+            margin-right:25%;
+        }
+        
     </style>
 </head>
     
@@ -85,58 +81,42 @@
             <asp:TextBox ID="searchItem" runat="server" BorderColor="#000000" Width="318px" Height="30px"></asp:TextBox>
             <asp:Button ID="searchButton" runat="server"  text="Search" OnClick="onClickSearch" />
 
-                <asp:Button ID="showCatalog" runat="server" style="text-align:center" text="Show Catalog" OnClick="onClickCatalog" />
+                <asp:Button ID="showCatalog" runat="server" style="text-align:center" text="Show Catalog" OnClick="toggleCatalog" />
 
-                <div id="searchResult" runat="server"></div>
+                <div id="searchResult" runat="server">
+                </div>
             <br /> 
                 <div id="searchResult2" runat="server" style="display:none">
-                    <asp:ImageButton ID="searchImage" runat="server" Onclick="clickItem"/>
+                    
                     <asp:Label ID="searchName" runat="server"></asp:Label>
                 </div>
             <br />
                 </div>
+
+            <div class="searchColumn">
+                <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
+
+            </div>
+
         
-                    <div id="allItems" runat="server"></div>
         <div id="wrapper"  runat="server">
+
             <div class="row">
-  
+            
             <div class="column">
             <p id="caption">Rugs</p>
-            <asp:ImageButton class="itemPic" src="items/bedrockRug.jpg" id="bedrockRug" onclick="clickItem" runat="server" AlternateText="Bed Rock Rug"/>
-                <div class="itemDetail" >Bed Rock Rug</div>
-
-            <asp:ImageButton class="itemPic" src="items/roseRug.jpg"  id="roseRug" onclick="clickItem" runat="server" AlternateText="Rose Rug"/>
-            <div class="itemDetail" >Rose Rug</div>
-
-            <asp:ImageButton class="itemPic" src="items/tropicalRug.jpg" id="tropicalRug" onclick="clickItem" runat="server" AlternateText="Tropical Rug"/>
-                <div class="itemDetail" >Tropical Rug</div>
-
-            <asp:ImageButton class="itemPic" src="items/lacyRug.jpg" id="lacyRug" onclick="clickItem" runat="server" AlternateText="Lacy Rug"/>
-                <div class="itemDetail" >Lacy Rug</div>
-
-            <asp:ImageButton class="itemPic" src="items/fluffyRug.jpg" id="fluffyRug" onclick="clickItem" runat="server" AlternateText="Fluffy Rug"/>
-                <div class="itemDetail" >Fluffy Rug</div>
-
+                <asp:PlaceHolder runat="server" ID="PlaceHolderRugs" />
             </div>
             <div class="column">
-
             <p id="caption">Mats</p>
-            <asp:ImageButton class="itemPic" src="items/brownMat.jpg" id="brownMat" onclick="clickItem" runat="server" AlternateText="Brown Mat"/>
-                <p class="itemDetail" >Brown Mat</p>
-
-            <asp:ImageButton class="itemPic" src="items/tatamiMat.jpg" id="tatamiMat" onclick="clickItem" runat="server" AlternateText="Tatami Mat"/>
-                <p class="itemDetail">Tatami Mat</p>
-
-            <asp:ImageButton class="itemPic" src="items/redKilimMat.jpg" id="redKilimMat" onclick="clickItem" runat="server" AlternateText="Red Kilim Mat"/>
-                <p class="itemDetail" >Red Kilim Mat</p>
-
-            <asp:ImageButton class="itemPic" src="items/avocadoMat.jpg" id="avocadoMat" onclick="clickItem" runat="server" AlternateText="Avocado Mat"/>
-                <p class="itemDetail" >Avocado Mat</p>
-
-            <asp:ImageButton class="itemPic" src="items/ivoryMat.jpg" id="ivoryMat" onclick="clickItem" runat="server"  AlternateText="Ivory Mat"/>
-                <p class="itemDetail" >Ivory Mat</p>
+                <asp:PlaceHolder runat="server" ID="PlaceHolderMats" />
 
             </div>
+                <div class="column">
+                    <p id="caption">Floorings</p>
+                <asp:PlaceHolder runat="server" ID="PlaceHolderFloorings"/>
+
+                </div>
             </div>
         </div>
     </form>
