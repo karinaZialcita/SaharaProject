@@ -10,15 +10,15 @@
             text-align:center;
             align-content:center;
         }
-        body
-        {
-            font-family: 'Segoe Script';
-            color: sandybrown;
-        }
         #cookieImage
         {
             width:40%;
             border-radius:25px;
+        }
+        body
+        {
+            font-family: 'Segoe Script';
+            color: sandybrown;
         }
     </style>
 </head>
