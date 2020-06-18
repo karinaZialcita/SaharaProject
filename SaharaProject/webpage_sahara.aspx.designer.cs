@@ -60,6 +60,33 @@ namespace sahara
         protected global::System.Web.UI.WebControls.Button showCatalog;
 
         /// <summary>
+        /// cartLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label cartLabel;
+
+        /// <summary>
+        /// cartQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label cartQuantity;
+
+        /// <summary>
+        /// goToCartBttn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button goToCartBttn;
+
+        /// <summary>
         /// searchResult control.
         /// </summary>
         /// <remarks>

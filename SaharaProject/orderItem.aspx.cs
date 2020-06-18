@@ -11,15 +11,16 @@ namespace sahara
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string cookiename = Request.Cookies["itemName"].Value;
-            string cookiePath = Request.Cookies["imagePath"].Value;
-/*            string cookiePrice = Request.Cookies["itemPrice"].Value;
-*/
+/*            string cookiename = Request.Cookies["itemName"].Value;
+            string cookiePath = Request.Cookies["imagePath"].Value; 
+*//*            string cookiePrice = Request.Cookies["itemPrice"].Value;
+*//*
             Image image = new Image();
             image.ImageUrl = cookiePath;
             image.ID="cookieImage";
+            
             PlaceHolder1.Controls.Add(image);
-            item.InnerText = "Would you like to purchase " + cookiename  +/* " for $" + cookiePrice +*/ "?";
+            */
       
         }
         protected void clickBuy (object sender, EventArgs e)

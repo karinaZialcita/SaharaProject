@@ -28,7 +28,8 @@ namespace sahara.entities
                 new Account("karina", "corn@gmail.com", "123456789", "karina1"),
                 new Account("acc", "acc@gmail.com", "23423424", "acc1"),
                 new Account("admin", "admin@gmail.com", "2342342423", "admin1"),
-                new Account("sahara", "sahara@gmail.com", "213123123123", "sahara1")
+                new Account("sahara", "sahara@gmail.com", "213123123123", "sahara1"),
+                new Account ("nicole", "nicole@mail.com", "6041237856", "hello")
             };
 
             return accList;
