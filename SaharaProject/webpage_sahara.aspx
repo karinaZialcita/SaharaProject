@@ -84,7 +84,7 @@
                     <asp:Label ID="cartLabel" Text="Cart: " runat="server"></asp:Label>
                     <asp:Label ID="cartQuantity" Text="" runat="server"></asp:Label>
                 
-                    <asp:Button ID="goToCartBttn" runat="server" text ="Go To Cart" />
+                    <asp:Button ID="goToCartBttn" runat="server" text ="Go To Cart" OnClick="goToCart"/>
 
                 <div id="searchResult" runat="server">
                 </div>

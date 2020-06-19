@@ -9,6 +9,7 @@
         *{
             text-align:center;
             align-content:center;
+            background-color: burlywood;
         }
         #cookieImage
         {
@@ -17,8 +18,8 @@
         }
         body
         {
-            font-family: 'Segoe Script';
-            color: sandybrown;
+            font-family: Georgia;
+            color: saddlebrown;
         }
     </style>
 </head>
@@ -32,12 +33,19 @@
                    <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
                 <div id="buttons" runat="server">
                     <asp:Button ID="buyButton" onClick="clickBuy" Text="Buy" runat="server"/>
-                    <asp:Button ID="cancelButton" onClick="clickCancel" Text="Cancel" runat="server" />
                     
                 </div>
-                <asp:Button ID="menu" onClick="clickMenu" Text="Main Menu" runat="server" />
             </div>
         </div>
+        <p>
+                    <asp:Button ID="cancelButton" onClick="clickCancel" Text="Cancel" runat="server" />
+                    
+                </p>
+        <p>
+                <asp:Button ID="menu" onClick="clickMenu" Text="Main Menu" runat="server" />
+            </p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

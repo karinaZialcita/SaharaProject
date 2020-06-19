@@ -199,5 +199,12 @@ namespace sahara
 
         }
 
+        protected void goToCart(object sender, EventArgs e)
+        {
+            HttpCookie userInfo = new HttpCookie("userInfo");
+            userInfo["image"] = item.imagePath;
+
+            Response.Redirect("orderItem.aspx");
+        }
     }
 }

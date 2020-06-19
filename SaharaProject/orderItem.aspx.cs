@@ -11,17 +11,16 @@ namespace sahara
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-/*            string cookiename = Request.Cookies["itemName"].Value;
-            string cookiePath = Request.Cookies["imagePath"].Value; 
-*//*            string cookiePrice = Request.Cookies["itemPrice"].Value;
-*//*
-            Image image = new Image();
-            image.ImageUrl = cookiePath;
-            image.ID="cookieImage";
-            
-            PlaceHolder1.Controls.Add(image);
-            */
-      
+            //string cookiename = Request.Cookies["itemName"].Value;
+            //string cookiePath = Request.Cookies["imagePath"].Value;
+            //string cookiePrice = Request.Cookies["itemPrice"].Value;
+           
+            //Image image = new Image();
+            //image.ImageUrl = cookiePath;
+            //image.ID = "cookieImage";
+
+            //PlaceHolder1.Controls.Add(image);
+
         }
         protected void clickBuy (object sender, EventArgs e)
         {
@@ -34,7 +33,6 @@ namespace sahara
         {
             buttons.InnerText = "We can give you a discount of up to 75% off if you buy 2 items!";
     
-
         }
         protected void clickMenu(object sender, EventArgs e)
         {
