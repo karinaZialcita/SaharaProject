@@ -26,6 +26,7 @@
     <form id="form1" runat="server">
         <h1>Sahara</h1>
         <div>
+            <asp:Label ID="label1" runat="server"></asp:Label>
             <div id="options" runat="server">
                 <div id="item" runat="server">
                 </div>

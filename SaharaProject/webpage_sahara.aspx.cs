@@ -3,6 +3,7 @@ using sahara.entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
@@ -13,9 +14,12 @@ namespace sahara
 {
     public partial class webpage_sahara : System.Web.UI.Page
     {
-        Item item = new Item();
         List<Item> itemList = new List<Item>();
         bool isCatalogVisible;
+        private static int itemQuantity=0;
+
+        List<string> cartList = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             /*            string cookiename = Request.Cookies["accountName"].Value;
@@ -23,7 +27,7 @@ namespace sahara
 
             preloadItems();
             fillCatalog();
-            
+            cartQuantity.Text = itemQuantity.ToString();
             isCatalogVisible = false;
         }
         protected void preloadItems()
@@ -95,7 +99,7 @@ namespace sahara
                         label.Text = item.itemName + " $" + item.price;
                         Button button = new Button();
                         button.Text = "Add to Cart";
-                        button.Click += clickItem;
+                        button.Click += addToCart;
                         PlaceHolder1.Controls.Add(image);
                         PlaceHolder1.Controls.Add(label);
                         PlaceHolder1.Controls.Add(button);
@@ -139,7 +143,9 @@ namespace sahara
                         label.Text = item.itemName + " $" + item.price;
                         Button button = new Button();
                         button.Text = "Add to Cart";
-                        button.Click += clickItem;
+                        button.Click += addToCart;
+                        button.ID = item.itemName;
+
                         PlaceHolderRugs.Controls.Add(image);
                         PlaceHolderRugs.Controls.Add(label);
                         PlaceHolderRugs.Controls.Add(button);
@@ -159,7 +165,9 @@ namespace sahara
                         label.Text = item.itemName + " $" + item.price;
                         Button button = new Button();
                         button.Text = "Add to Cart";
-                        button.Click += clickItem;
+                        button.Click += addToCart;
+                        button.ID = item.itemName;
+
                         PlaceHolderMats.Controls.Add(image);
                         PlaceHolderMats.Controls.Add(label);
                         PlaceHolderMats.Controls.Add(button);
@@ -179,7 +187,9 @@ namespace sahara
                         label.Text = item.itemName + " $" + item.price;
                         Button button = new Button();
                         button.Text = "Add to Cart";
-                        button.Click += clickItem;
+                        button.Click += addToCart;
+                        button.ID = item.itemName;
+                        
                         PlaceHolderFloorings.Controls.Add(image);
                         PlaceHolderFloorings.Controls.Add(label);
                         PlaceHolderFloorings.Controls.Add(button);
@@ -190,14 +200,29 @@ namespace sahara
             }
         }
 
-        void clickItem(object sender, EventArgs e)
+        protected void addToCart(object sender, EventArgs e)
         {
-            
+            itemQuantity++;
+            cartQuantity.Text = itemQuantity.ToString();
             Button button = (Button)sender;
-   
-            Response.Redirect("orderItem.aspx");
-
+            string itemName = button.ID;
+            cartList.Add(itemName);
+            //test to see if the list is gettin updated
+            foreach(string item in cartList)
+            {
+                Trace.Write(item);
+                searchResult.InnerText += item;
+            }
         }
+        protected void goToCart(object sender, EventArgs e)
+        {
+
+            string listCstring = string.Join(",", cartList);
+            Response.Cookies["listC"].Value = listCstring;
+            Response.Redirect("orderItem.aspx");
+        }
+       
+
 
     }
 }
