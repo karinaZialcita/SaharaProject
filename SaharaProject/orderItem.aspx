@@ -15,11 +15,14 @@
         {
             width:40%;
             border-radius:25px;
+            display: block;
+            margin: 0;
         }
         body
         {
             font-family: Georgia;
             color: saddlebrown;
+            font-display: block;
         }
         #buttons {
             height: 54px;

@@ -18,7 +18,7 @@
         }
         h2 
         {
-            font-family: Georgia;
+            font-family: Georgia; 
         }
         #registration, #login
         {

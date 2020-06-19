@@ -10,10 +10,11 @@
             font-family: Georgia;
             color: saddlebrown;
             text-align:center;
+            font-display: block;
         }
           * {
+              align-content:center;
             box-sizing: border-box;
-            align-content:center;
             background-color: burlywood;
         }
         .column {
@@ -47,6 +48,7 @@
             border: solid black 1px;
             border-radius: 25px;
             text-align: center;
+
 
         }
         #wrapper {
