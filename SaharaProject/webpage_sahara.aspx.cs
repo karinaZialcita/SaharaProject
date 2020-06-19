@@ -22,13 +22,14 @@ namespace sahara
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*            string cookiename = Request.Cookies["accountName"].Value;
-            */            /*welcomeName.InnerText = "Welcome, " + cookiename;*/
+            /*string cookiename = Request.Cookies["accountName"].Value;
+            welcomeName.InnerText = "Welcome, " + cookiename;*/
 
             preloadItems();
             fillCatalog();
             cartQuantity.Text = itemQuantity.ToString();
             isCatalogVisible = false;
+            goToCartBttn.Click += goToCart;
         }
         protected void preloadItems()
         {
@@ -207,17 +208,11 @@ namespace sahara
             Button button = (Button)sender;
             string itemName = button.ID;
             cartList.Add(itemName);
-            //test to see if the list is gettin updated
-            foreach(string item in cartList)
-            {
-                Trace.Write(item);
-                searchResult.InnerText += item;
-            }
         }
         protected void goToCart(object sender, EventArgs e)
         {
 
-            string listCstring = string.Join(",", cartList);
+            string listCstring =string.Join(",", cartList);
             Response.Cookies["listC"].Value = listCstring;
             Response.Redirect("orderItem.aspx");
         }
