@@ -11,20 +11,23 @@ namespace sahara
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*            string cookiename = Request.Cookies["itemName"].Value;
-                        string cookiePath = Request.Cookies["imagePath"].Value; 
-            *//*            string cookiePrice = Request.Cookies["itemPrice"].Value;
-            *//*
-                        Image image = new Image();
-                        image.ImageUrl = cookiePath;
-                        image.ID="cookieImage";
+            string cookiename = Request.Cookies["itemName"].Value;
+            string cookiePath = Request.Cookies["imagePath"].Value;
+            //string cookiePrice = Request.Cookies["itemPrice"].Value;
 
-                        PlaceHolder1.Controls.Add(image);
-                        */
-            string liststring = Request.Cookies["listC"].Value;
-            buttons.InnerText = liststring;
+            Image image = new Image();
+            image.ImageUrl = cookiePath;
+            //image.ID = "cookieImage";
 
-/*            if(Request.Cookies["listC"]!= null)
+            PlaceHolder1.Controls.Add(image);
+
+            // cookiename, hardcoded
+            item.InnerText = "Would you like to purchase " + cookiename + "?";
+
+            //string liststring = Request.Cookies["listC"].Value;
+            //buttons.InnerText = liststring;
+
+            if (Request.Cookies["listC"] != null)
             {
                 List<string> cookieList = Request.Cookies["listC"].Value.Split(',').ToList();
 
@@ -32,7 +35,7 @@ namespace sahara
                 foreach (string c in cookieList)
                     label.Text += c;
                 PlaceHolder1.Controls.Add(label);
-            }*/
+            }
 
         }
         protected void clickBuy (object sender, EventArgs e)
@@ -40,7 +43,6 @@ namespace sahara
             Random rand = new Random();
             int randPrice = rand.Next(10, 1000);
             buttons.InnerText = "The total price is $"+ randPrice + ".\nThank you for shopping at Sahara!";
-            //buyButton.Visible = true;
 
         }
         protected void clickCancel(object sender, EventArgs e)
