@@ -21,6 +21,9 @@
             font-family: Georgia;
             color: saddlebrown;
         }
+        #buttons {
+            height: 54px;
+        }
     </style>
 </head>
 <body>
@@ -32,19 +35,18 @@
                 <div id="item" runat="server">
                 </div>
                    <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
+            <br/>
                 <div id="buttons" runat="server">
-                    <asp:Button ID="buyButton" onClick="clickBuy" Text="Buy" runat="server"/>
-                    
+                    <asp:Button ID="buyButton" runat="server" Text="Buy" OnClick="clickBuy" Width="147px"/>
+                    <asp:Button ID="cancelButton" runat="server" Text="Cancel" OnClick="clickCancel" Width="146px" />
                 </div>
             </div>
-        </div>
-        <p>
-                    <asp:Button ID="cancelButton" onClick="clickCancel" Text="Cancel" runat="server" />
-                    
+        </div>        
+                <p>
+                <asp:Button ID="menu" onClick="clickMenu" Text="Main Menu" runat="server" Width="167px" />  
                 </p>
         <p>
-                <asp:Button ID="menu" onClick="clickMenu" Text="Main Menu" runat="server" />
-            </p>
+            &nbsp;</p>
         <p>
             &nbsp;</p>
     </form>

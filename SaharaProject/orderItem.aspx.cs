@@ -40,13 +40,12 @@ namespace sahara
             Random rand = new Random();
             int randPrice = rand.Next(10, 1000);
             buttons.InnerText = "The total price is $"+ randPrice + ".\nThank you for shopping at Sahara!";
+            //buyButton.Visible = true;
 
         }
         protected void clickCancel(object sender, EventArgs e)
         {
             buttons.InnerText = "We can give you a discount of up to 75% off if you buy 2 items!";
-    
-
         }
         protected void clickMenu(object sender, EventArgs e)
         {

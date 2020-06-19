@@ -221,15 +221,5 @@ namespace sahara
             Response.Cookies["listC"].Value = listCstring;
             Response.Redirect("orderItem.aspx");
         }
-       
-
-
-        protected void goToCart(object sender, EventArgs e)
-        {
-            HttpCookie userInfo = new HttpCookie("userInfo");
-            userInfo["image"] = item.imagePath;
-
-            Response.Redirect("orderItem.aspx");
-        }
     }
 }
