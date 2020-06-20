@@ -22,8 +22,8 @@ namespace sahara
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*string cookiename = Request.Cookies["accountName"].Value;
-            welcomeName.InnerText = "Welcome, " + cookiename;*/
+            string cookiename = Request.Cookies["accountName"].Value;
+            welcomeName.InnerText = "Welcome, " + cookiename;
 
             preloadItems();
             fillCatalog();
